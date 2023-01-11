@@ -4,7 +4,7 @@ public class Parking {
     // константа, отвечающая за общее количество парковочных мест
     public static final int TOTAL_PARKING_PLACE = 100;
     public int freeParkingPlaces = 100;
-    public boolean isFull = true;
+    public boolean isFull = false;
 
     // метод, который выводит количество свободных мест
     public void printFreeParkingPlacesAmount() {
