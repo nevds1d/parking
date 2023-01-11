@@ -1,6 +1,8 @@
 package user;
 
 public class Parking {
+    // константа, отвечающая за общее количество парковочных мест
+    public static final int TOTAL_PARKING_PLACE = 100;
     public int freeParkingPlaces = 100;
     public boolean isFull = true;
 
@@ -25,5 +27,18 @@ public class Parking {
             System.out.println("Свободных мест нет!");
         }
     }
-
+    //метод, который освобождает парковочное место
+    public void leaveParkingPlace() {
+        // если свободных мест меньше, чем всего мест на
+        // парковке (то есть хотя бы одно место занято),
+        // можно освободить место и увеличить количество свободных мест на 1
+        if(freeParkingPlaces < TOTAL_PARKING_PLACE) {
+            freeParkingPlaces++;
+            System.out.println("Автомобиль покинул парковку");
+            printFreeParkingPlacesAmount();
+            isFull = false;
+        } else {
+            System.out.println("Парковочных мест не может быть больше" + TOTAL_PARKING_PLACE);
+        }
+    }
 }
